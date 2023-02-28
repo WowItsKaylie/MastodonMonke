@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+	<PropertyGroup>
+		<GamePath>C:\Program Files\Oculus\Software\Software\another-axiom-gorilla-tag</GamePath>
+		<PluginsPath>$(GamePath)\BepInEx\plugins</PluginsPath>
+	</PropertyGroup>
+</Project>
