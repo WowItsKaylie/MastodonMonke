@@ -25,9 +25,12 @@ namespace MastodonMonke
         public void Initialize()
         {
             _commandTokens = new List<CommandToken>();
+            Debug.Log("loading mastodonmonke config");
             var customFile = new ConfigFile(Path.Combine(Paths.ConfigPath, "MastodonMonke.cfg"), true);
+            Debug.Log("loading instance and token from config");
             var instance = customFile.Bind("Login", "Instance", "https://mastodon.social", "Mastodon instance to use");
             var accessToken = customFile.Bind("Login", "Token", "PutYourTokenHere", "Access token to use. Get this from the Development category in your Mastodon settings. Don't share this with anyone, anybody with this token can freely access your application and usually full write access in turn!!!!!");
+            Debug.Log("creating authClient and client");
             var authClient = new AuthenticationClient(instance.Value);
             var client = new MastodonClient(instance.Value, accessToken.Value);
 
@@ -45,6 +48,7 @@ namespace MastodonMonke
                 if (accessToken.Value != accessToken.DefaultValue.ToString())
                 {
                     client.PublishStatus((string)args[0], Visibility.Public);
+                    Debug.Log("Attempted to post: " + (string)args[0]);
                     return "Attempted to post:\n" + (string)args[0];
                 }
                 else
