@@ -1,6 +1,10 @@
 # MastodonMonke
 a mastodon client for computer interface
 
+Archived in favor of dev's project, inspired by this one.
+Go there for more of this, I'll do some pull requests over there! 
+https://github.com/developer9998/MastodonMonke
+
 ## To-do
 - Views (high priority)
 - Content warnings (high priority)
